@@ -9,9 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e70e28f8-83f9-40ee-9b2a-b0f5c46dd0aa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/PassingTrips/PassingTrips.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PassingTrips/PassingTrips.csproj" afterDir="false" />
+    <list default="true" id="e70e28f8-83f9-40ee-9b2a-b0f5c46dd0aa" name="Changes" comment="Added dependency in services">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Variant1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Variant1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PassingTrips/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PassingTrips/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PassingTrips/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PassingTrips/Controllers/LoginController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PassingTrips/LoginTokenDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PassingTrips/Dtos/LoginTokenDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PassingTrips/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PassingTrips/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PassingTrips/Options/AuthOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PassingTrips/Options/AuthOptions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PassingTrips/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PassingTrips/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PassingTrips/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PassingTrips/ServiceCollectionExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PassingTrips/Services/LoginHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PassingTrips/Services/LoginHelper.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +32,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/user/RiderProjects/your-tests-version-antonborisov571/Variant1/PassingTrips/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -115,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710589492489</updated>
       <workItem from="1710589493702" duration="12336000" />
-      <workItem from="1710602729030" duration="6180000" />
+      <workItem from="1710602729030" duration="16376000" />
     </task>
     <task id="LOCAL-00001" summary="Added models in README.md">
       <option name="closed" value="true" />
@@ -213,7 +223,55 @@
       <option name="project" value="LOCAL" />
       <updated>1710602628407</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added rider files">
+      <option name="closed" value="true" />
+      <created>1710613398572</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710613398572</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added rider files">
+      <option name="closed" value="true" />
+      <created>1710613420235</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710613420235</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added controllers">
+      <option name="closed" value="true" />
+      <created>1710613446026</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1710613446026</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added services">
+      <option name="closed" value="true" />
+      <created>1710613460113</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1710613460113</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added repositories and extensions">
+      <option name="closed" value="true" />
+      <created>1710613492723</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1710613492723</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added dependency in services">
+      <option name="closed" value="true" />
+      <created>1710613524854</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1710613524854</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +282,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added models in README.md" />
     <MESSAGE value="git" />
-    <MESSAGE value="Added rider files" />
     <MESSAGE value="Added rider files x2" />
     <MESSAGE value="Added solution" />
     <MESSAGE value="Added project" />
@@ -234,6 +291,12 @@
     <MESSAGE value="Added migrations" />
     <MESSAGE value="Added .gitignore" />
     <MESSAGE value="Added endpoints in README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added endpoints in README" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
+    <MESSAGE value="Added rider files" />
+    <MESSAGE value="Added controllers" />
+    <MESSAGE value="Added services" />
+    <MESSAGE value="Added repositories and extensions" />
+    <MESSAGE value="Added dependency in services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dependency in services" />
   </component>
 </project>
