@@ -17,7 +17,10 @@ public class LoginHelper(IUserRepository userRepository) : ILoginHelper
         {
             var claims = new List<Claim>
             {
-                new(ClaimsIdentity.DefaultNameClaimType, user.Login)
+                new(ClaimsIdentity.DefaultNameClaimType, user.Login),
+                new(ClaimTypes.MobilePhone, user.NumberPhone),
+                new(ClaimTypes.Name, user.FirstName),
+                new(ClaimTypes.NameIdentifier, user.Id.ToString())
             };
             ClaimsIdentity claimsIdentity =
                 new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,

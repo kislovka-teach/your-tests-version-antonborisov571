@@ -4,29 +4,31 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using PassingTrips.Abstractions;
+using PassingTrips.Dtos;
 using PassingTrips.Options;
 
 namespace PassingTrips.Controllers;
 
+[ApiController]
 public class LoginController(ILoginHelper loginHelper) : ControllerBase
 {
-    [HttpPost("/login")]
-    public async Task<IActionResult> Login([FromBody] string login, [FromBody] string password)
+    [HttpPost]
+    [Route("/login")]
+    public async Task<IActionResult> Login([FromBody] UserDto userDto)
     {
-        var identity = await loginHelper.GetIdentity(login, password);
+        var identity = await loginHelper.GetIdentity(userDto.Login, userDto.Password);
         var result = await loginHelper.GetToken(identity);
         if (result.IsSuccess)
         {
             var response = new
             {
                 access_token = result.JwtToken,
-                username = identity.Name
+                type = "bearer"
             };
 
-            return new JsonResult(response);
+            return Ok(response);
         }
-        else
-            return BadRequest(result.ErrorMessage);
+        return BadRequest(result.ErrorMessage);
 
     }
 }

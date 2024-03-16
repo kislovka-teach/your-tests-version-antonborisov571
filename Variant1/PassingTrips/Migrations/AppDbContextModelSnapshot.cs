@@ -47,6 +47,20 @@ namespace PassingTrips.Migrations
                         .HasDatabaseName("ix_cities_coordinate_id");
 
                     b.ToTable("cities", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CoordinateId = 1,
+                            Name = "Москва"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CoordinateId = 2,
+                            Name = "Казань"
+                        });
                 });
 
             modelBuilder.Entity("PassingTrips.Models.Coordinate", b =>
@@ -70,6 +84,20 @@ namespace PassingTrips.Migrations
                         .HasName("pk_coordinates");
 
                     b.ToTable("coordinates", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Longitude = 0f,
+                            Width = 0f
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Longitude = 0f,
+                            Width = 50f
+                        });
                 });
 
             modelBuilder.Entity("PassingTrips.Models.Review", b =>
@@ -225,6 +253,19 @@ namespace PassingTrips.Migrations
                         .HasName("pk_users");
 
                     b.ToTable("users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DateRegistration = new DateOnly(1, 1, 1),
+                            DrivingExperience = 1,
+                            FirstName = "Вася",
+                            LastName = "Пупкин",
+                            Login = "login123",
+                            NumberPhone = "1234567890",
+                            Password = "qwerty1!Q"
+                        });
                 });
 
             modelBuilder.Entity("TripUser", b =>

@@ -7,7 +7,7 @@ public class AuthOptions
 {
     public const string Issuer = "MyAuthServer"; 
     public const string Audience = "MyAuthClient"; 
-    const string Key = "123"; 
+    const string Key = "mysupersecretmysupersecretmysupersecretmysupersecretmysupersecret"; 
     public const int Lifetime = 3; 
     public static SymmetricSecurityKey GetSymmetricSecurityKey()
     {
