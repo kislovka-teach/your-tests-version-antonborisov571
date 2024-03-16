@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using PassingTrips.Abstractions;
 using PassingTrips.Options;
 using PassingTrips.Repositories;
+using PassingTrips.Services;
 
 namespace PassingTrips.Configurations;
 
@@ -32,5 +33,10 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         return services.AddScoped<IUserRepository, UserRepository>();
+    }
+    
+    public static IServiceCollection AddServices(this IServiceCollection services)
+    {
+        return services.AddScoped<ILoginHelper, LoginHelper>();
     }
 }
