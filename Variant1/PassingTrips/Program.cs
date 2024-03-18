@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using PassingTrips;
 using PassingTrips.Configurations;
+using PassingTrips.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,10 @@ builder.Services.AddDbContext<AppDbContext>(optionsBuilder =>
 builder.Services.AddRepositories();
 builder.Services.AddServices();
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(expression =>
+{
+    expression.AddProfile<AppMappingProfile>();
+});
 
 var app = builder.Build();
 

@@ -14,6 +14,7 @@ public class Trip
     public int Price { get; set; }
     public int MaxCountPassenger { get; set; }
     public List<User> Passengers { get; set; }
+    public List<Review> Reviews { get; set; }
     public string Car { get; set; }
     public bool IsMusic { get; set; }
     public bool IsSmoking { get; set; }

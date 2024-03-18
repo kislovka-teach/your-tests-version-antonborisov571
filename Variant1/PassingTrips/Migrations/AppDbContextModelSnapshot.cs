@@ -109,10 +109,6 @@ namespace PassingTrips.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("RecipientId")
-                        .HasColumnType("integer")
-                        .HasColumnName("recipient_id");
-
                     b.Property<string>("ReviewText")
                         .IsRequired()
                         .HasColumnType("text")
@@ -126,14 +122,18 @@ namespace PassingTrips.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("sender_id");
 
+                    b.Property<int>("TripId")
+                        .HasColumnType("integer")
+                        .HasColumnName("trip_id");
+
                     b.HasKey("Id")
                         .HasName("pk_reviews");
 
-                    b.HasIndex("RecipientId")
-                        .HasDatabaseName("ix_reviews_recipient_id");
-
                     b.HasIndex("SenderId")
                         .HasDatabaseName("ix_reviews_sender_id");
+
+                    b.HasIndex("TripId")
+                        .HasDatabaseName("ix_reviews_trip_id");
 
                     b.ToTable("reviews", (string)null);
                 });
@@ -301,13 +301,6 @@ namespace PassingTrips.Migrations
 
             modelBuilder.Entity("PassingTrips.Models.Review", b =>
                 {
-                    b.HasOne("PassingTrips.Models.User", "Recipient")
-                        .WithMany()
-                        .HasForeignKey("RecipientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_reviews_users_recipient_id");
-
                     b.HasOne("PassingTrips.Models.User", "Sender")
                         .WithMany()
                         .HasForeignKey("SenderId")
@@ -315,9 +308,16 @@ namespace PassingTrips.Migrations
                         .IsRequired()
                         .HasConstraintName("fk_reviews_users_sender_id");
 
-                    b.Navigation("Recipient");
+                    b.HasOne("PassingTrips.Models.Trip", "Trip")
+                        .WithMany("Reviews")
+                        .HasForeignKey("TripId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_reviews_trips_trip_id");
 
                     b.Navigation("Sender");
+
+                    b.Navigation("Trip");
                 });
 
             modelBuilder.Entity("PassingTrips.Models.Trip", b =>
@@ -365,6 +365,11 @@ namespace PassingTrips.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("fk_trip_user_users_passengers_id");
+                });
+
+            modelBuilder.Entity("PassingTrips.Models.Trip", b =>
+                {
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("PassingTrips.Models.User", b =>

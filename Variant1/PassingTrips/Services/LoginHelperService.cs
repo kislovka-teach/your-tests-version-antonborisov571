@@ -8,11 +8,14 @@ using PassingTrips.Options;
 
 namespace PassingTrips.Services;
 
-public class LoginHelper(IUserRepository userRepository) : ILoginHelper
+public class LoginHelperService(
+    IUserRepository userRepository,
+    IPasswordHasherService hasherService) : ILoginHelper
 {
     public async Task<ClaimsIdentity> GetIdentity(string login, string password)
     {
-        var user = await userRepository.GetUserByLoginPassword(login, password);
+        var hashPassword = hasherService.GetHashPassword(password, new byte[]{});
+        var user = await userRepository.GetUserByLoginPassword(login, hashPassword);
         if (user != null)
         {
             var claims = new List<Claim>

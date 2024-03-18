@@ -7,7 +7,7 @@ public class User
     public string LastName { get; set; }
     public string Login { get; set; }
     public string Password { get; set; }
-    public DateOnly DateRegistration { get; set; }
+    public DateTime DateRegistration { get; set; }
     public string NumberPhone { get; set; }
     public int DrivingExperience { get; set; }
     public List<Trip> DriverTrips { get; set; }
