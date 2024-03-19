@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using PassingTrips.Abstractions;
+using PassingTrips.Models;
 using PassingTrips.Options;
 using PassingTrips.Repositories;
 using PassingTrips.Services;
@@ -32,11 +33,16 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
+        services.AddScoped<ICityRepository, CityRepository>();
+        services.AddScoped<IReviewRepository, ReviewRepository>();
+        services.AddScoped<ITripRepository, TripRepository>();
         return services.AddScoped<IUserRepository, UserRepository>();
     }
     
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
+        services.AddScoped<IFindTripsByCoordinates, FindTripsByCoordinatesService>();
+        services.AddScoped<PasswordHasherService, PasswordHasherService>();
         return services.AddScoped<ILoginHelper, LoginHelperService>();
     }
 }
