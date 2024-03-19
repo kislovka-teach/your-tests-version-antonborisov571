@@ -1,0 +1,6 @@
+@PassingTrips_HostAddress = http://localhost:5105
+
+GET {{PassingTrips_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
